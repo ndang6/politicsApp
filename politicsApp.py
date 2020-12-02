@@ -13,7 +13,7 @@ def callback(url):
 
 def get_article_newsmax():
   source = requests.get("https://www.newsmax.com/politics/").text
-  soup = BeautifulSoup(source, 'lxml')
+  soup = BeautifulSoup(source, 'html.parser')
   articles = soup.findAll("li", {"class" : "article_link"})
   
   count = 1
@@ -31,7 +31,7 @@ def get_article_newsmax():
 
 def get_article_nytimes():
   source = requests.get("https://www.nytimes.com/section/politics").text
-  soup = BeautifulSoup(source, 'lxml')
+  soup = BeautifulSoup(source, 'html.parser')
   
   count = 1
 
